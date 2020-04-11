@@ -1,14 +1,13 @@
+# Import Libraries
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import r2_score,mean_squared_error
-from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.preprocessing import StandardScaler
-from sklearn import metrics
-
 import seaborn as sns
+from sklearn import metrics
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import r2_score,mean_squared_error
 
 # Import dataframe
 df = pd.read_csv("E:\\Mozila Firefox\\train_data.csv")
@@ -44,4 +43,14 @@ for name, importance in zip(feature_list, regressor.feature_importances_):
     print(name, "=", importance)
 
 # Plot important features
+features = feature_list
+importances = regressor.feature_importances_
+indices = np.argsort(importances)
 
+plt.figure(figsize=(10,8))
+plt.title('Feature Importances', fontsize= 12)
+plt.barh(range(len(indices)), importances[indices], color='b', align='center')
+plt.yticks(range(len(indices)), [features[i] for i in indices], fontsize=12)
+plt.xlabel('Relative Importance', fontsize= 12)
+plt.savefig("E://Graphs//Variable_Importance.png")
+plt.show()
