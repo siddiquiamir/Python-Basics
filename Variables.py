@@ -29,3 +29,14 @@ c= 10
 print(sys.getrefcount(a))
 print(ref_count(id(a)))
 
+# Tuples
+a= [1,2,3]
+a.append(4)
+print(a)
+
+t= ([1,2], [3,4])
+print(t)
+print(t[0])
+t[0].append(10)
+print(t)
+
