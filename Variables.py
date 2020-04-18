@@ -40,3 +40,25 @@ print(t[0])
 t[0].append(10)
 print(t)
 
+# Function returning a function
+def square(a):
+    return a**a
+
+def cube(a):
+    return a**3
+
+def select_function(a):
+    if a ==1:
+        return square
+    else:
+        return cube
+
+f= select_function(2)
+print(f(2))
+print(select_function(2)(3))
+
+# Function as parameter
+def execute_function(fn,n):
+    return fn(n)
+
+print(execute_function(cube,4))
