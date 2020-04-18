@@ -22,3 +22,60 @@ def my_func(a,b=10,c=50):
     print("a={0}, b={1}, c={2}".format(a,b,c))
 
 my_func(c=10, a=1, b=100)
+
+# Upacking
+l= [1,2,3,4,5,6]
+a= l[0]
+b= l[1:]
+print(a)
+print(b)
+
+a,b = l[0], l[1:]
+print(a)
+print(b)
+
+a,*b = l
+print(a)
+print(b)
+
+s= "python"
+a, *b = s
+print(a)
+print(b)
+
+t= (1,2,3)
+a,*b = t
+print(a)
+print(b)
+
+[a,b,c]= "XYX"
+print(a)
+print(b)
+print(c)
+
+a,b,*c= s
+print(a)
+print(b)
+print(c)
+
+a,b,*c,d = s
+print(a)
+print(b)
+print(c)
+print(d)
+
+a,b,c,d = s[0], s[1], s[2:-1], s[-1]
+print(a)
+print(b)
+print(c)
+print(d)
+
+l1= [1,2,3]
+l2= [4,5,6]
+l= [*l1, *l2]
+print(l)
+
+l1=[1,2,3]
+s= "python"
+print(*l1, *s)
+
