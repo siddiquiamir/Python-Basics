@@ -62,3 +62,7 @@ def execute_function(fn,n):
     return fn(n)
 
 print(execute_function(cube,4))
+
+help(int)
+int(True)
+int(False)
