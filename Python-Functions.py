@@ -79,3 +79,24 @@ l1=[1,2,3]
 s= "python"
 print(*l1, *s)
 
+# To unpack dictionary we use ** double star because single * only gives key and ** gives both keys and values
+d1= {"key1": 5, "key2": 10}
+d2= {"key2": 15, "key3": 20}
+
+# This will onlly print keys
+print({*d1, *d2})
+
+# This will print both key and values
+print({**d1, **d2})
+
+# Nested Unpacking
+a,b,e = [1,2,"xyz"]
+print(a)
+print(b)
+print(c)
+
+a,b,(c,d) = [1,2,"xy"]
+print(a)
+print(b)
+print(c)
+print(d)
