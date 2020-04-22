@@ -166,3 +166,63 @@ def func1(a,b,c, *args):
 
 l=[1,2,3,4,5,6,7]
 print(*l)
+
+def func1(a,b,c):
+    print(a,b,c)
+
+func1(10,20,30)
+func1(1,c=10, b=90) #once you start using arguments name you have to continue using you can't stop
+
+# Mandatory positinal arguments
+def func(a,b,*args,d):
+    print(a,b,args,d)
+
+func(2,3,4,5,d=10)
+
+def func(*args,d):
+    print(args,d)
+
+func(1,2,3,d=10)
+func(d=10)
+
+# In this function you cannot pass any argument excpet positional argument d
+def func(*,d):
+    print(d)
+
+func(d=100)
+
+# This function will only take default values
+def func(a,b,*,d):
+    print(a,b,d)
+
+func(a=1,b=2,d=10)
+func(1,2,d=100)
+
+def func(a,b=10,*args,d):
+    print(a,b,args,d)
+
+func(1,2,3,4,d=10)
+
+def func(a,b=10,*args,d,e):
+    print(a,b,args,d,e)
+
+func(1,2,3,4,5,d=100,e=200)
+func(0, 600, d="good morning", e="python")
+func(0, 600,1,2,3, d="good morning", e="python")
+
+# **kwargs (key word arguments)
+def func(**kwargs):
+    print(kwargs)
+
+func(a=10,b=20,c=30)
+
+def func(*args,**kwargs):
+    print(args,kwargs)
+
+func(1,2,3,4,a=10,b=20)
+
+def func(a,b,*,d,**kwargs):
+    print(a,b,kwargs)
+
+func(1,2,3,4,a=10,b=20)
+
