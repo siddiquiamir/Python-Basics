@@ -231,3 +231,33 @@ def func(a,b,*,d,**kwargs):
 
 func(1,2,d=1,c=10,e=20)
 
+def func(a,b,*args):
+    print(a,b,args)
+
+func(1,2,3,4,5)
+
+def func(a,b=2,c=3,*args):
+    print(a,b,c,args)
+func(1,2,3,4,5,6,7)
+
+# func(1,c=2,4,5,6) # You can't use this because once you start using keyword c=2 you can't pass *args
+def func(a,b,*args,c=10,d=20,**kwargs):
+    print(a,b,args,c,d,kwargs)
+
+func(1,2,3,4,5,7,g=11,h=12)
+
+#print
+print(1,2,3,sep="-")
+
+# Note : *args and **kwargs can be empty
+
+def cal_hi_low_avg(*args,log_to_console=False):
+    hi = int(bool(args)) and max(args)
+    lo = min(args) if len(args) > 0 else 0
+    avg = (hi + lo)/2
+    if log_to_console:
+        print("High={}, Low={} and Avg={}".format(hi,lo,avg))
+    return avg
+
+print(cal_hi_low_avg(1,2,3,4))
+print(cal_hi_low_avg(1,2,3,4, log_to_console=True))
