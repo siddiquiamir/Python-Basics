@@ -100,3 +100,69 @@ print(a)
 print(b)
 print(c)
 print(d)
+
+# args
+# This always return answer in tuple
+def func1(a,b,*args):
+    print(a)
+    print(b)
+    print(args)
+
+func1(101,11,12,13,12,14)
+func1(1,2,3,4,3,4)
+
+# Write a function using *args to find average
+def avg(*args):
+    total= sum(args)
+    count= len(args)
+    return total/count
+
+print("The average is", avg(2,2,4,4))
+
+# Write a function which returns 0 if no number is passed or returns answer if numbers are passed
+def avg1(*args):
+    total = sum(args)
+    count = len(args)
+    if count==0:
+        return 0
+    else:
+        return total/count
+
+print(avg1())
+print(avg1(2,2,2))
+
+# Short circut.Better way of writing above code.
+def avg1(*args):
+    total = sum(args)
+    count = len(args)
+    return count and total/count
+
+print(avg1())
+print(avg1(2,2,2))
+
+def avg1(a,*args):
+    total = sum(args) + a
+    count = len(args) + 1
+    return count and total/count
+
+print(avg1(0))
+print(avg1(2,2,2))
+
+# upack elements
+def func1(a,b,c):
+    print(a)
+    print(b)
+    print(c)
+
+l=[1,2,3]
+func1(*l)
+
+# Upack unlimited list using *args
+def func1(a,b,c, *args):
+    print(a)
+    print(b)
+    print(c)
+    print(args)
+
+l=[1,2,3,4,5,6,7]
+print(*l)
