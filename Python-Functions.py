@@ -221,8 +221,13 @@ def func(*args,**kwargs):
 
 func(1,2,3,4,a=10,b=20)
 
+def func(a,b,*args):
+    print(a,b,args)
+
+func(1,2,3,4,5)
+
 def func(a,b,*,d,**kwargs):
     print(a,b,kwargs)
 
-func(1,2,3,4,a=10,b=20)
+func(1,2,d=1,c=10,e=20)
 
