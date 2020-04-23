@@ -261,3 +261,25 @@ def cal_hi_low_avg(*args,log_to_console=False):
 
 print(cal_hi_low_avg(1,2,3,4))
 print(cal_hi_low_avg(1,2,3,4, log_to_console=True))
+
+# Write a function to compute power of n
+def compute_power_1(n,*,start=1,end):
+    result = []
+    for i in range(start,end):
+        result.append(n**i)
+    return result
+
+print(compute_power_1(2,end=5))
+
+# Write the above function using list comphrension
+def compute_power_1(n,*,start=1,end):
+    return [n**i for i in range(start,end)]
+print(compute_power_1(2,end=5))
+
+# Define the same function using generator
+def compute_power_1(n,*,start=1,end):
+    return (n**i for i in range(start,end))
+
+print(list(compute_power_1(2,end=5)))
+
+
