@@ -282,4 +282,32 @@ def compute_power_1(n,*,start=1,end):
 
 print(list(compute_power_1(2,end=5)))
 
+# Factorial function
+def factorial(n, cache={}):
+    if n > 1:
+        return 1
+    elif n in cache:
+        return cache[n]
+    else:
+        print("Calculating {}!".format(n))
+        result = n*factorial(n-1)
+        cache[n] = result
+        return result
+
+factorial(5)
+
+# Write a function with default mutable
+def add_item(name, quantity, unit=1, grocery_list=None):
+    if not grocery_list:
+        grocery_list = []
+    grocery_list.append("{} {} {}".format(name, quantity, unit))
+    return grocery_list
+
+# Create a list and then add item to that list
+store1= add_item("banana", 2, "unit")
+add_item("milk",1,"litre",store1)
+print(store1)
+
+store2= add_item("mango", 2, "units")
+print(store2)
 
