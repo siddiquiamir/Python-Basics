@@ -37,3 +37,24 @@ for i in l:
     result.append(i**2)
 
 print(result)
+
+# List comphrension
+print([i**2 for i in l])
+
+# Example of Zip as an alternate to lambda function
+print(list(map(lambda x,y: x+y,l1,l2)))
+
+print([i+j for i,j in zip(l1,l2)])
+
+# List Comphrension alternate to filter
+print(list(filter(lambda x: x%2==0,l1)))
+
+print([i for i in l if i%2==0])
+
+# List Comphrension and two two higher order function
+l= range(10)
+print(l)
+
+list(filter(lambda x: x <25,map(lambda x: x**2,l)))
+
+print([i**2 for i in l if i**2 <25])
